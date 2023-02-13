@@ -1,14 +1,14 @@
 // Import dependencies and Shape objects
 const inquirer = require('inquirer');
 const fs = require('fs');
-const { Square, Rectangle, Circle, Triangle, Ellipse, textCheck, colorCheck} = require('./Develop/lib/shapes.js');
+const { Square, Rectangle, Circle, Triangle, Ellipse, textCheck, colorCheck} = require('./develop/shapes.js');
 
 // Define global variables
 const questions = [
     {
       type: 'input',
       name: 'text',
-      message: 'Enter up to 3 Characters: '
+      message: 'Enter up to 3 Characters for  your logo: '
     },
     {
       type: 'input',
@@ -18,7 +18,7 @@ const questions = [
     {
       type: 'list',
       name: 'shape',
-      message: 'What shape would you like?',
+      message: 'What background shape would you like?',
       choices: [
         'Circle',
         'Square',
