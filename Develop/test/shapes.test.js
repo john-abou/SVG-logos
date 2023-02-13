@@ -32,7 +32,7 @@ describe('Square', () => {
     })
 })
 
-// Create unit test for to ensure the Square render method is working correctly.
+// Create unit test for to ensure the Rectangle render method is working correctly.
 describe('Rectangle', () => {
     test("Check if the Rectangle Classes shape property assignment is working.", () => {
         const square = new Rectangle();
@@ -63,7 +63,7 @@ describe('Rectangle', () => {
     })
 })
 
-// Create unit test for to ensure the Square render method is working correctly.
+// Create unit test for to ensure the Circle render method is working correctly.
 describe('Circle', () => {
     test("Check if the Circle classes shape property assignment is working.", () => {
         const square = new Circle();
@@ -94,7 +94,7 @@ describe('Circle', () => {
     })
 })
 
-// Create unit test for to ensure the Square render method is working correctly.
+// Create unit test for to ensure the Triangle render method is working correctly.
 describe('Triangle', () => {
     test("Check if the Triangle classes shape property assignment is working.", () => {
         const square = new Triangle();
@@ -125,7 +125,7 @@ describe('Triangle', () => {
     })
 })
 
-// Create unit test for to ensure the Square render method is working correctly.
+// Create unit test for to ensure the Ellipse render method is working correctly.
 describe('Ellipse', () => {
     test("Check if the Ellipse classes shape property assignment is working.", () => {
         const square = new Ellipse();
