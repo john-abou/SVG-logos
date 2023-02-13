@@ -25,14 +25,14 @@ WHEN I open the `logo.svg` file in a browser THEN I am shown a 300x200 pixel ima
 // Import dependencies and Shape objects
 const inquirer = require('inquirer');
 const fs = require('fs');
-const { shape, square,} = shapes.js;
+const { Shape, Square} = require('./Develop/lib/shapes.js');
 
 // Define global variables
 const questions = [
     {
       type: 'input',
       name: 'text',
-      message: 'Enter up to 3 Characters:'
+      message: 'Enter up to 3 Characters: (default will be used if more than 3 chars are entered)'
     },
     {
       type: 'input',
@@ -59,11 +59,39 @@ const questions = [
 ];
 const hexRegex = /^([a-fA-F0-9]{6}||[a-fA-F0-9]{3})$/;
 const colorKeywords = "AliceBlue,AntiqueWhite,Aqua,Aquamarine,Azure,Beige,Bisque,Black,BlanchedAlmond,Blue,BlueViolet,Brown,BurlyWood,CadetBlue,Chartreuse,Chocolate,Coral,CornflowerBlue,Cornsilk,Crimson,Cyan,DarkBlue,DarkCyan,DarkGoldenRod,DarkGrey,DarkGreen,DarkKhaki,DarkMagenta,DarkOliveGreen,Darkorange,DarkOrchid,DarkRed,DarkSalmon,DarkSeaGreen,DarkSlateBlue,DarkSlateGrey,DarkTurquoise,DarkViolet,DeepPink,DeepSkyBlue,DimGray,DodgerBlue,FireBrick,FloralWhite,ForestGreen,Fuchsia,Gainsboro,GhostWhite,Gold,GoldenRod,Grey,Green,GreenYellow,HoneyDew,HotPink,IndianRed,Indigo,Ivory,Khaki,Lavender,LavenderBlush,LawnGreen,LemonChiffon,LightBlue,LightCoral,LightCyan,LightGoldenRodYellow,LightGrey,LightGreen,LightPink,LightSalmon,LightSeaGreen,LightSkyBlue,LightSlateGrey,LightSteelBlue,LightYellow,Lime,LimeGreen,Linen,Magenta,Maroon,MediumAquaMarine,MediumBlue,MediumOrchid,MediumPurple,MediumSeaGreen,MediumSlateBlue,MediumSpringGreen,MediumTurquoise,MediumVioletRed,MidnightBlue,MintCream,MistyRose,Moccasin,NavajoWhite,Navy,OldLace,Olive,OliveDrab,Orange,OrangeRed,Orchid,PaleGoldenRod,PaleGreen,PaleTurquoise,PaleVioletRed,PapayaWhip,PeachPuff,Peru,Pink,Plum,PowderBlue,Purple,Red,RosyBrown,RoyalBlue,SaddleBrown,Salmon,SandyBrown,SeaGreen,SeaShell,Sienna,Silver,SkyBlue,SlateBlue,SlateGrey,Snow,SpringGreen,SteelBlue,Tan,Teal,Thistle,Tomato,Turquoise,Violet,Wheat,White,WhiteSmoke,Yellow,YellowGreen";
+ 
 
 inquirer
     .prompt(questions)
     .then( (answers) => {
-        const { text, textColor, shape, shapeColor } = answers;
-
+      const { text, textColor, shape, shapeColor } = answers;
+      
+      
 
     })
+
+
+// Create a function to test that the text is 3 letters
+function colorCheck( textInput ) {
+  if (textInput.length > 3) {
+    textInput = "SVG"
+    return textInput;
+  } else {
+    return textInput;
+  }
+}
+
+// Create a function to test that the color entered is a hexcode or color
+function colorCheck( color ) {
+  if (hexRegex.includes(color) || colorKeywords.includes(color)) {
+    return color
+  } else {
+    color = "black";
+    return color;
+  }
+}
+
+/*
+let testShape = new Square("SVG", "white", "square", "black");
+testShape.render()
+*/
