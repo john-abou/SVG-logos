@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const { Square, Rectangle, Circle, Triangle, Ellipse, textCheck, colorCheck} = require('./develop/shapes.js');
 
-// Define global variables
+// Define the questions to be used in the prompt
 const questions = [
     {
       type: 'input',
@@ -34,14 +34,16 @@ const questions = [
     }
 ];
  
-
+// Prompt the user for the questions
 inquirer
     .prompt(questions)
+    
+    // use the answers to generate the SVG file
     .then( (answers) => {
       let { text, textColor, shape, shapeColor } = answers;
       shape = shape.toLowerCase();
       
-      // Create different cases for whatever the user choose to create
+      // Create different cases for whatever the user chooses to create
       switch ( shape ) {
         case "square":
           const squareSVG = new Square(text, textColor, shape, shapeColor);
