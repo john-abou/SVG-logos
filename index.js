@@ -1,17 +1,3 @@
-/*
-// Write a prompt to accept 3 letters, text color (keyword or hexadecimal), list of shapes, shape color (keyword or hexa).
-
-// Based on input from the prompt, SVG  file is created with named 'logo.svg'. Console log "Genererated logo.svg".
-
-// Code reqs:
-// OOP --> have a class for each shape, circle, triangle, rectangle
-// Must have parent Class called shape -- common traits include text, shape text, shape color, height, width
-// All classes must have a render method -- parent render should display that child render is not working
-// From input instantiate a new class of the selected shape
-// Use classes methods to update text, text color, shape color --> these methods should be in Shape class (parent)
-// Use child class to have a specific method to make shape height, width, etc 
-*/
-
 // Import dependencies and Shape objects
 const inquirer = require('inquirer');
 const fs = require('fs');
@@ -22,7 +8,7 @@ const questions = [
     {
       type: 'input',
       name: 'text',
-      message: 'Enter up to 3 Characters: (default will be used if more than 3 chars are entered)'
+      message: 'Enter up to 3 Characters: '
     },
     {
       type: 'input',
@@ -48,24 +34,39 @@ const questions = [
     }
 ];
  
-/*
+
 inquirer
     .prompt(questions)
     .then( (answers) => {
-      const { text, textColor, shape, shapeColor } = answers;
+      let { text, textColor, shape, shapeColor } = answers;
+      shape = shape.toLowerCase();
       
       // Create different cases for whatever the user choose to create
       switch ( shape ) {
-        case value:
-          
+        case "square":
+          const squareSVG = new Square(text, textColor, shape, shapeColor);
+          squareSVGCode = squareSVG.svg();
+          squareSVG.render(shape, squareSVGCode)
           break;
-      
-        default:
+        case "rectangle":
+          const rectangleSVG = new Rectangle(text, textColor, shape, shapeColor);
+          rectangleSVGCode = rectangleSVG.svg();
+          rectangleSVG.render(shape, rectangleSVGCode);
           break;
-      }      
-
+        case "circle":
+          const circleSVG = new Circle(text, textColor, shape, shapeColor);
+          circleSVGCode = circleSVG.svg()
+          circleSVG.render(shape, circleSVGCode);
+          break;
+        case "triangle":
+          const triangleSVG = new Triangle(text, textColor, shape, shapeColor);
+          triangleSVGCode = triangleSVG.svg();
+          triangleSVG.render(shape, triangleSVGCode);
+          break;
+        case "ellipse":
+          const ellipseSVG = new Ellipse(text, textColor, shape, shapeColor);
+          ellipseSVGCode =ellipseSVG.svg();
+          ellipseSVG.render(shape, ellipseSVGCode);
+          break;
+        }      
     })
-*/
-
-let testShape = new Square("SVG", "white", "square", "black");
-testShape.render()
