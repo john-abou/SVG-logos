@@ -16,12 +16,11 @@ class Shape {
     svg() {
         let SVG = `
         <svg xmlns="http://www.w3.org/2000/svg" height="200" width="300" style="text-align: center;">
-        <!-- rectangle -->
         <${this.shape} style="fill:${this.shapeColor}" />
         
-        <text x="50%" y="50%" style="font-size: 32px;  text-align:center;" text-anchor="middle" alignment-baseline="middle" fill="${this.textColor}">
-        ${this.text}
-        </text>
+            <text x="50%" y="50%" style="font-size: 32px;  text-align:center;" text-anchor="middle" alignment-baseline="middle" fill="${this.textColor}">
+            ${this.text}
+            </text>
         </svg>
     `
     return SVG;
