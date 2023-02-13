@@ -72,7 +72,7 @@ inquirer
 
 
 // Create a function to test that the text is 3 letters
-function colorCheck( textInput ) {
+function textCheck( textInput ) {
   if (textInput.length > 3) {
     textInput = "SVG"
     return textInput;

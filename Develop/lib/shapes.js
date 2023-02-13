@@ -44,6 +44,34 @@ class Square extends Shape {
     }
 }
 
+class Rectangle extends Shape {
+    constructor(text, textColor, shape, shapeColor) {
+        super(text, textColor, shapeColor);
+        this.shape = 'rect x="25" y="25" width="270" height="170"';
+    }
+}
+
+class Circle extends Shape {
+    constructor(text, textColor, shape, shapeColor) {
+        super(text, textColor, shapeColor);
+        this.shape = 'circle cx="150" cy="100" r="90" fill="red"';
+    }
+}
+
+class Triangle extends Shape {
+    constructor(text, textColor, shape, shapeColor) {
+        super(text, textColor, shapeColor);
+        this.shape = 'polygon points="150,10 290,190 10,190"';
+    }
+}
+
+class Ellipse extends Shape {
+    constructor(text, textColor, shape, shapeColor) {
+        super(text, textColor, shapeColor);
+        this.shape = 'ellipse cx="150" cy="100" rx="125" ry="75"';
+    }
+}
+
 
 module.exports = {Shape, Square}
 
