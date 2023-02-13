@@ -15,16 +15,6 @@ class Shape {
 
     svg() {
         let SVG = `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SVG Logo Generator</title>
-    </head>
-    <body>
-
         <svg xmlns="http://www.w3.org/2000/svg" height="200" width="300" style="text-align: center;">
         <!-- rectangle -->
         <${this.shape} style="fill:${this.shapeColor}" />
@@ -33,30 +23,12 @@ class Shape {
         ${this.text}
         </text>
         </svg>
-        
-    </body>
-    </html>
     `
     return SVG;
     }
 
-    render(shapeInput, htmlVar) {
-        fs.writeFile(`./examples/${shapeInput}.svg`, htmlVar, (err) => err ? console.log(`${shapeInput} SVG generated`) : console.error(err))
-    }
-
-    updateTextColor( updatedColor ) {
-        this.textColor = colorCheck(updatedColor);
-        console.log("Rerun the render method to see the changes!")
-    }
-
-    updateText( updatedText ) {
-        this.text = textCheck(updatedText);
-        console.log("Rerun the render method to see the changes!")
-    }
-
-    updateShapeColor( updatedColor ) {
-        this.shapeColor = colorCheck(updatedColor);
-        console.log("Rerun the render method to see the changes!")
+    render(shapeInput, svgVar) {
+        fs.writeFile(`./examples/${shapeInput}.svg`, svgVar, (err) => err ?  console.error(err) : console.log( `The ${shapeInput} SVG was successfully generated` ) )
     }
 }
 

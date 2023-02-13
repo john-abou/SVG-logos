@@ -8,12 +8,12 @@ const questions = [
     {
       type: 'input',
       name: 'text',
-      message: 'Enter up to 3 Characters for  your logo: '
+      message: 'Enter up to 3 Characters for your logo: '
     },
     {
       type: 'input',
       name: 'textColor',
-      message: 'Enter a text color:'
+      message: `Enter a text color. A hexstring ("ffa500") or color keyword (blue) is valid: `
     },
     {
       type: 'list',
@@ -30,7 +30,7 @@ const questions = [
     {
       type: 'input',
       name: 'shapeColor',
-      message: 'Enter a shape color:'
+      message: `Enter a color for the background shape. A hexstring ("ffa500") or color keyword (blue) is valid:`
     }
 ];
  
@@ -46,6 +46,7 @@ inquirer
         case "square":
           const squareSVG = new Square(text, textColor, shape, shapeColor);
           squareSVGCode = squareSVG.svg();
+          console.log('creating SVG var worked.')
           squareSVG.render(shape, squareSVGCode)
           break;
         case "rectangle":

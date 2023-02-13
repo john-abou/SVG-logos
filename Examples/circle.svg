@@ -1,23 +1,10 @@
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SVG Logo Generator</title>
-    </head>
-    <body>
-
         <svg xmlns="http://www.w3.org/2000/svg" height="200" width="300" style="text-align: center;">
         <!-- rectangle -->
-        <circle cx="150" cy="100" r="90" fill="red" style="fill:blue" />
+        <circle cx="150" cy="100" r="90" fill="red" style="fill:lightblue" />
         
         <text x="50%" y="50%" style="font-size: 32px;  text-align:center;" text-anchor="middle" alignment-baseline="middle" fill="blue">
-        abc
+        ABC
         </text>
         </svg>
-        
-    </body>
-    </html>
     
