@@ -15,7 +15,7 @@ describe('Square', () => {
     })
     test("Check if the Square textColor property assignment is working.", () => {
         const square = new Square();
-        const expectedShape = 'white' // Default color is black if no input is passed
+        const expectedShape = 'white' // Default color is white if no input is passed
         expect(square.textColor).toEqual(expectedShape)
     })
     test("Check if the Square class throws an error when the text input is above 3 chars.", () => {
@@ -46,7 +46,7 @@ describe('Rectangle', () => {
     })
     test("Check if the Rectangle Classes textColor property assignment is working.", () => {
         const square = new Rectangle();
-        const expectedShape = 'white' // Default color is black if no input is passed
+        const expectedShape = 'white' // Default color is white if no input is passed
         expect(square.textColor).toEqual(expectedShape)
     })
     test("Check if the Rectangle class throws an error when the text input is above 3 chars.", () => {
@@ -77,7 +77,7 @@ describe('Circle', () => {
     })
     test("Check if the Circle classes textColor property assignment is working.", () => {
         const square = new Circle();
-        const expectedShape = 'white' // Default color is black if no input is passed
+        const expectedShape = 'white' // Default color is white if no input is passed
         expect(square.textColor).toEqual(expectedShape)
     })
     test("Check if the Circle class throws an error when the text input is above 3 chars.", () => {
@@ -108,7 +108,7 @@ describe('Triangle', () => {
     })
     test("Check if the Triangle classes textColor property assignment is working.", () => {
         const square = new Triangle();
-        const expectedShape = 'white' // Default color is black if no input is passed
+        const expectedShape = 'white' // Default color is white if no input is passed
         expect(square.textColor).toEqual(expectedShape)
     })
     test("Check if the Triangle class throws an error when the text input is above 3 chars.", () => {
@@ -139,7 +139,7 @@ describe('Ellipse', () => {
     })
     test("Check if the Ellipse classes textColor property assignment is working.", () => {
         const square = new Ellipse();
-        const expectedShape = 'white' // Default color is black if no input is passed
+        const expectedShape = 'white' // Default color is white if no input is passed
         expect(square.textColor).toEqual(expectedShape)
     })
     test("Check if the Ellipse class throws an error when the text input is above 3 chars.", () => {
